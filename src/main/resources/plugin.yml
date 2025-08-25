@@ -1,0 +1,32 @@
+name: Kese
+version: 0.1
+main: dev.mustay.kese.Kese
+authors: [mustayland, mood230]
+depend: [Vault, PlaceholderAPI]
+api-version: 1.16
+softdepend: [Essentials, ItemsAdder, HeadDatabase, Oraxen]
+commands:
+  kese:
+    description: Oyuncu Komutu
+  keseadmin:
+    description: Admin komutu
+permissions:
+  m.kese.*:
+    description: Admin kullanabilir.
+    default: op
+    children:
+        m.kese.op: true
+  m.kese.op:
+    description: Kese yönetici yetkisi
+    default: op
+    children:
+        m.kese.oyuncu: true
+        m.kese.admin: true
+        
+  m.kese.oyuncu:
+    description: Oyuncular kullanabilir.
+    default: op
+    
+  m.kese.admin:
+    description: Admin kullanabilir.
+    default: op
